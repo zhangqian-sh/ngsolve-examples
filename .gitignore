@@ -1,3 +1,13 @@
+# Project specific files
+.vscode/
+*.code-workspace
+test/
+temp/
+other/
+misc/
+test_*.ipynb
+*.sh
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
