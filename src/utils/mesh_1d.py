@@ -1,7 +1,7 @@
 # Get 1D mesh
 from netgen.meshing import *
 import ngsolve
-
+import numpy as np
 
 def generate_1d_mesh_dirichlet(N_element: int):
     # generate a 1D mesh
@@ -10,7 +10,7 @@ def generate_1d_mesh_dirichlet(N_element: int):
     # add points
     pnums = []
     for i in range(0, N_element + 1):
-        pnums.append(m.Add(MeshPoint(Pnt(i / N_element, 0, 0))))
+        pnums.append(m.Add(MeshPoint(Pnt(2 * np.pi * i / N_element, 0, 0))))
 
     # add element
     idx = m.AddRegion("medium", dim=1)
@@ -36,7 +36,7 @@ def generate_1d_mesh_periodic(N_element: int):
     # add points
     pnums = []
     for i in range(0, N_element + 1):
-        pnums.append(m.Add(MeshPoint(Pnt(i / N_element, 0, 0))))
+        pnums.append(m.Add(MeshPoint(Pnt(2 * np.pi * i / N_element, 0, 0))))
 
     # add element
     idx = m.AddRegion("medium", dim=1)
